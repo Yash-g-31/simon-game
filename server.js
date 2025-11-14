@@ -37,6 +37,7 @@ const server = http.createServer((req, res) => {
     });
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`Simon Game server is running on port ${PORT}`);
+    console.log(`Environment PORT: ${process.env.PORT}`);
 });
