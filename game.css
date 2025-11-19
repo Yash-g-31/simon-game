@@ -1,10 +1,25 @@
 body {
     text-align: center;
+    margin: 0;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+h2 {
+    margin: 0.5rem 0 1.5rem 0;
+    font-size: 1.2rem;
 }
 
 .box-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .btn {
@@ -12,7 +27,10 @@ body {
     width: 200px;
     border: 10px solid black;
     border-radius: 4rem;
-    margin: 2rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    flex-shrink: 0;
 }
 
 .yellow {
@@ -49,4 +67,54 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        height: 120px;
+        width: 120px;
+        border: 6px solid black;
+        margin: 0.5rem;
+    }
+
+    footer {
+        margin-top: 2rem;
+        padding: 1rem;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0 0.3rem 0;
+    }
+
+    h2 {
+        font-size: 0.9rem;
+        margin: 0.3rem 0 1rem 0;
+    }
+
+    .btn {
+        height: 80px;
+        width: 80px;
+        border: 4px solid black;
+        border-radius: 2rem;
+        margin: 0.4rem;
+    }
+
+    footer {
+        margin-top: 1.5rem;
+        padding: 0.8rem;
+        font-size: 11px;
+    }
 }
