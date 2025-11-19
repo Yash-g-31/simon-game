@@ -41,8 +41,9 @@ function levelUp() {
     userSeq = [];
     level++;
     h2.innerText = `Level ${level}`;
-
-    let randIdx = Math.floor(Math.random() * 3);
+    //let randIdx = Math.floor(Math.random() * 3);
+    // choose random index from available buttons
+    let randIdx = Math.floor(Math.random() * btns.length);
     let randColor = btns[randIdx];
     let randBtn = document.querySelector(`.${randColor}`);
 
