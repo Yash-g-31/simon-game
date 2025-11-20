@@ -1,31 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="game.css" />
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simon — Memory Game</title>
+  <link rel="stylesheet" href="game.css" />
 </head>
 <body>
-    <h1 >Simon Game</h1>
-    <h2> Press any key or tap to start</h2>
+  <div class="page">
+    <header class="header" role="banner">
+      <h1 class="title">SIMON</h1>
 
-    <div class="box-container">
-        <div>
-            <div class="btn red" type="button" id="red">Red</div>
-            <div class="btn yellow" type="button" id="yellow">Yellow</div>
+      <div class="controls" role="region" aria-label="Game controls">
+        <button id="startBtn" class="btn primary" aria-label="Start game">START</button>
+        <div class="stat">Level: <span id="level">0</span></div>
+        <div class="stat">High Score: <span id="highScore">0</span></div>
+        <button id="rulesBtn" class="btn ghost" aria-haspopup="dialog" aria-controls="rulesModal">How to Play</button>
+        <button id="muteBtn" class="btn ghost" aria-pressed="false" title="Toggle sound">🔊</button>
+      </div>
+
+      <div id="srLive" class="sr-only" aria-live="polite"></div>
+    </header>
+
+    <main class="main" role="main">
+      <div class="board-wrap">
+        <div class="board" id="board" aria-hidden="false">
+          <button class="pad pad-green" data-pad="green" aria-label="Green pad"></button>
+          <button class="pad pad-red" data-pad="red" aria-label="Red pad"></button>
+          <button class="pad pad-yellow" data-pad="yellow" aria-label="Yellow pad"></button>
+          <button class="pad pad-blue" data-pad="blue" aria-label="Blue pad"></button>
+
+          <div class="center">
+            <div class="center-text">
+              <div class="small">Memory</div>
+              <div class="big">Game</div>
+            </div>
+          </div>
         </div>
-        <div>
-            <div class="btn green" type="button" id="green">Green</div>
-            <div class="btn purple" type="button" id="purple">Purple</div>
+      </div>
+    </main>
+
+    <!-- Rules Modal -->
+    <div id="rulesModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="rulesTitle">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="rulesTitle">How to Play</h2>
+          <button id="closeRules" class="close" aria-label="Close rules">✕</button>
         </div>
+        <ol class="rules-list">
+          <li>Tap START to begin.</li>
+          <li>Watch the colors flash in a sequence.</li>
+          <li>Repeat the sequence by tapping the pads in the same order.</li>
+          <li>The sequence gets longer every round.</li>
+          <li>One mistake = Game Over.</li>
+          <li>Your score is the level you reached.</li>
+          <li>High Score saves automatically on your device.</li>
+        </ol>
+        <div class="modal-actions">
+          <button id="gotIt" class="btn primary">Got it</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- Game Over overlay -->
+<div id="gameOverOverlay" class="gameover-overlay" aria-hidden="true" role="status" aria-live="polite">
+  <div class="gameover-card">
+    <h3 id="gameOverTitle">Game Over</h3>
+    <p id="gameOverText">You reached <span id="finalScore">0</span></p>
+    <div class="gameover-actions">
+      <button id="retryBtn" class="btn primary">Retry</button>
+      <button id="closeGameOver" class="btn ghost">Close</button>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">Made with <span class="heart">♥️</span> by Yash</div>
+</footer>
 
-    <footer>
-        <p>Made with ❤️ by Yash</p>
-    </footer>
 
-    <script src="game.js"></script>
+  <script src="game.js" defer></script>
 </body>
 </html>
+

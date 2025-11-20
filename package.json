@@ -1,15 +1,11 @@
 {
   "name": "simon-game",
   "version": "1.0.0",
-  "description": "Interactive Simon Game",
-  "main": "server.js",
+  "description": "Interactive Simon Game (static)",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "vercel-build": "echo \"static site\""
   },
-  "keywords": ["simon", "game"],
   "author": "Yash",
-  "license": "ISC",
-  "engines": {
-    "node": "22.x"
-  }
+  "license": "ISC"
 }
