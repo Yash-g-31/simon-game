@@ -26,6 +26,3 @@ npm start
 
 Then open `http://localhost:3000` in your browser.
 
-## Deployment to Railway
-
-See the deployment instructions in the Railway documentation.
